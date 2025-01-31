@@ -1,0 +1,9 @@
+echo "data/raw/
+data/processed/
+models/
+results/
+__pycache__/
+*.h5
+*.pkl
+*.csv
+" > .gitignore
