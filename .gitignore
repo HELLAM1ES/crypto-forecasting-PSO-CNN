@@ -1,9 +1,9 @@
-echo "data/raw/
-data/processed/
-models/
-results/
-__pycache__/
-*.h5
-*.pkl
-*.csv
-" > .gitignore
+# Exclure les fichiers temporaires ou volumineux, mais garder les dossiers
+data/raw/
+models/*.h5
+results/*.png
+
+# Autoriser les dossiers à apparaître
+!data/.keep
+!models/.keep
+!results/.keep
