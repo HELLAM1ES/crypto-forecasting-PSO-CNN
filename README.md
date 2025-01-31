@@ -159,6 +159,4 @@ For any questions or suggestions, feel free to reach out to the authors:
 - **Charlotte Cegarra**
 - **Chirine Doxposito**
 
----
 
-With this version, the README includes all essential details about your project, its scientific context, and its purpose in the Master MOSEF program. Let me know if you'd like to refine or expand any section! 🚀
