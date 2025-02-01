@@ -80,7 +80,7 @@ def main():
         "Cardano (ADA)": f"https://finance.yahoo.com/quote/ADA-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Dogecoin (DOGE)": f"https://finance.yahoo.com/quote/DOGE-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Litecoin (LTC)": f"https://finance.yahoo.com/quote/LTC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Avalanche (AVAX)": f"https://finance.yahoo.com/quote/AVAX-USD/history?period1={start_date}&period2={end_date}&interval=1d",  # Remplacement de Arbitrum par Avalanche
+        "Cosmos (ATOM)": f"https://finance.yahoo.com/quote/ATOM-USD/history?period1={start_date}&period2={end_date}&interval=1d",  # Remplacement par Cosmos
         "Chainlink (LINK)": f"https://finance.yahoo.com/quote/LINK-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Polygon (MATIC)": f"https://finance.yahoo.com/quote/MATIC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "XRP (XRP)": f"https://finance.yahoo.com/quote/XRP-USD/history?period1={start_date}&period2={end_date}&interval=1d",
