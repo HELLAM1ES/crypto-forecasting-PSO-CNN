@@ -55,7 +55,7 @@ def process_crypto_data(driver, name, url):
 
             df = pd.DataFrame(rows_data, columns=headers)
             df['Crypto'] = name
-            filename = f"{name}_yahoo_data.csv"
+            filename = f"data/raw/{name.replace(' ', '_')}_yahoo_data.csv"
             df.to_csv(filename, index=False, encoding='utf-8')
             print(f"[{name}] Data saved to {filename}")
             return True
@@ -67,20 +67,24 @@ def process_crypto_data(driver, name, url):
         return False
 
 def main():
+    """
+    Programme principal pour extraire les données des cryptos spécifiées.
+    """
     start_date = 1577836800  # 2020-01-01
     end_date = 1735689600    # 2024-12-31
 
+    # URLs pour les cryptos listées
     yahoo_urls = {
         "Bitcoin (BTC)": f"https://finance.yahoo.com/quote/BTC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Ethereum (ETH)": f"https://finance.yahoo.com/quote/ETH-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Solana (SOL)": f"https://finance.yahoo.com/quote/SOL-USD/history?period1={start_date}&period2={end_date}&interval=1d",
+        "Cardano (ADA)": f"https://finance.yahoo.com/quote/ADA-USD/history?period1={start_date}&period2={end_date}&interval=1d",
+        "Dogecoin (DOGE)": f"https://finance.yahoo.com/quote/DOGE-USD/history?period1={start_date}&period2={end_date}&interval=1d",
+        "Litecoin (LTC)": f"https://finance.yahoo.com/quote/LTC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Arbitrum (ARB)": f"https://finance.yahoo.com/quote/ARB-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Chainlink (LINK)": f"https://finance.yahoo.com/quote/LINK-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Render (RNDR)": f"https://finance.yahoo.com/quote/RNDR-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Immutable X (IMX)": f"https://finance.yahoo.com/quote/IMX-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Filecoin (FIL)": f"https://finance.yahoo.com/quote/FIL-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "XRP (XRP)": f"https://finance.yahoo.com/quote/XRP-USD/history?period1={start_date}&period2={end_date}&interval=1d",
         "Polygon (MATIC)": f"https://finance.yahoo.com/quote/MATIC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
+        "XRP (XRP)": f"https://finance.yahoo.com/quote/XRP-USD/history?period1={start_date}&period2={end_date}&interval=1d",
+        "Filecoin (FIL)": f"https://finance.yahoo.com/quote/FIL-USD/history?period1={start_date}&period2={end_date}&interval=1d",
     }
 
     driver = configure_driver()
