@@ -1,9 +1,44 @@
-# Exclure les fichiers temporaires ou volumineux, mais garder les dossiers
-data/raw/
-models/*.h5
-results/*.png
+# Ignorer l'environnement virtuel
+.venv/
+venv/
 
-# Autoriser les dossiers à apparaître
-!data/.keep
-!models/.keep
-!results/.keep
+# Ignorer les fichiers Python compilés
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignorer les fichiers de configuration ou secrets
+.env
+*.env
+*.key
+*.pem
+
+# Ignorer les fichiers logs
+*.log
+
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db
+
+# Ignorer les résultats générés
+results/*
+!results/.keep  # Ne pas ignorer le fichier .keep
+
+# Ignorer les modèles et fichiers lourds
+models/*
+!models/.keep  # Ne pas ignorer le fichier .keep
+
+# Ignorer les données traitées et brutes
+data/processed/*
+!data/processed/.keep  # Ne pas ignorer le fichier .keep
+data/features/*
+!data/features/.keep  # Ne pas ignorer le fichier .keep
+data/raw/*
+!data/raw/.keep  # Ne pas ignorer le fichier .keep
+
+# Ignorer les fichiers notebooks checkpoints
+.ipynb_checkpoints/
+
+# Ignorer les fichiers spécifiques à l'IDE
+.vscode/
+.idea/
