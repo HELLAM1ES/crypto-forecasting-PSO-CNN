@@ -62,7 +62,7 @@ if __name__ == "__main__":
         "../../data/raw/Cardano_(ADA)_yahoo_data.csv",
         "../../data/raw/Dogecoin_(DOGE)_yahoo_data.csv",
         "../../data/raw/Litecoin_(LTC)_yahoo_data.csv",
-        "../../data/raw/Arbitrum_(ARB)_yahoo_data.csv",
+        "../../data/raw/Cosmos_(ATOM)_yahoo_data.csv",  # Remplacement de Avalanche par Cosmos
         "../../data/raw/Chainlink_(LINK)_yahoo_data.csv",
         "../../data/raw/Polygon_(MATIC)_yahoo_data.csv",
         "../../data/raw/XRP_(XRP)_yahoo_data.csv",
