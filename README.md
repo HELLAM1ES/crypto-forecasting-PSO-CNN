@@ -30,44 +30,58 @@ This project blends **machine learning**, **financial modeling**, and **cryptocu
 ## **📂 Project Structure**
 ```
 📦 crypto-forecasting-PSO-CNN
-├── 📂 data/                  # Collected and cleaned data
-│   ├── raw/                  # Raw data
-│   ├── processed/            # Preprocessed data
-│   ├── features/             # Data with engineered features
-│   ├── market_data.csv       # Placeholder for market data
-│   ├── blockchain_data.csv   # Placeholder for on-chain data
-│   ├── events_data.csv       # Placeholder for macroeconomic events
-├── 📂 notebooks/             # Jupyter notebooks for data exploration
+├── 📂 data/                  # Données collectées et nettoyées
+│   ├── raw/                  # Données brutes récupérées
+│   │   ├── Arbitrum-ARB_yahoo_data.csv
+│   │   ├── Bitcoin-BTC_yahoo_data.csv
+│   │   ├── Cardano-ADA_yahoo_data.csv
+│   │   ├── Chainlink-LINK_yahoo_data.csv
+│   │   ├── Dogecoin-DOGE_yahoo_data.csv
+│   │   ├── Ethereum-ETH_yahoo_data.csv
+│   │   ├── Filecoin-FIL_yahoo_data.csv
+│   │   ├── Litecoin-LTC_yahoo_data.csv
+│   │   ├── Polygon-MATIC_yahoo_data.csv
+│   │   ├── XRP-XRP_yahoo_data.csv
+│   ├── processed/            # Données nettoyées et fusionnées
+│   │   ├── merged_data.csv   # Fichier fusionné contenant toutes les données
+│   ├── features/             # Données enrichies avec indicateurs techniques
+│       ├── .keep
+├── 📂 notebooks/              # Notebooks Jupyter pour l'exploration
 │   ├── 01_data_collection.ipynb
 │   ├── 02_feature_engineering.ipynb
 │   ├── 03_model_training.ipynb
 │   ├── 04_portfolio_optimization.ipynb
-├── 📂 models/                # Trained models
-│   ├── PSO_CNN_model.h5      # Future trained model
-│   ├── clustering_model.pkl  # Future clustering model
-├── 📂 src/                   # Source code
-│   ├── 📂 data_processing/
-│   │   ├── collect_data.py   # Data collection scripts
-│   │   ├── clean_data.py     # Data preprocessing
-│   │   ├── feature_engineering.py # Adding technical indicators
-│   ├── 📂 models/
-│   │   ├── train_model.py    # Training the PSO-CNN model
-│   │   ├── clustering.py     # Clustering algorithms
-│   │   ├── predict.py        # Prediction scripts
-│   ├── 📂 optimization/
-│   │   ├── optimize_portfolio.py # Portfolio allocation strategies
+├── 📂 models/                 # Modèles entraînés
+│   ├── PSO_CNN_model.h5       # Modèle entraîné (placeholder)
+│   ├── clustering_model.pkl   # Modèle de clustering (placeholder)
+│   ├── .keep
+├── 📂 src/                    # Code source pour l'implémentation
 │   ├── 📂 api/
-│   │   ├── main.py           # FastAPI for model deployment
-├── 📂 results/               # Results and visualizations
+│   │   ├── main.py            # API FastAPI pour servir les prédictions
+│   ├── 📂 data_processing/
+│   │   ├── clean_data.py      # Script de nettoyage et fusion des données
+│   │   ├── collect_data.py    # Scripts de collecte de données
+│   │   ├── feature_engineering.py # Ajout d’indicateurs techniques
+│   ├── 📂 models/
+│   │   ├── train_model.py     # Entraînement du modèle PSO-CNN
+│   │   ├── clustering.py      # Algorithme de clustering
+│   │   ├── predict.py         # Script de prédiction
+│   ├── 📂 optimization/
+│   │   ├── optimize_portfolio.py # Stratégies d’allocation
+│   ├── 📂 web_scraping/
+│   │   ├── web.py             # Script pour le scraping des données
+├── 📂 results/                # Résultats et visualisations
 │   ├── backtesting_results.png
 │   ├── model_performance.csv
-├── 📂 docs/                  # Project documentation
-│   ├── methodology.md        # Methodology explanation
-│   ├── results.md            # Summary of results
-│   ├── references.md         # Literature review
-├── README.md                 # Project description
-├── requirements.txt          # Python dependencies
-├── .gitignore                # Files to exclude from Git tracking
+│   ├── .keep
+├── 📂 docs/                   # Documentation du projet
+│   ├── methodology.md         # Explication de la méthodologie
+│   ├── results.md             # Résumé des résultats
+│   ├── references.md          # Revue de littérature
+├── README.md                  # Présentation du projet
+├── requirements.txt           # Liste des dépendances Python
+├── .gitignore                 # Fichiers à exclure du suivi Git
+
 ```
 
 ---
