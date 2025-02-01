@@ -24,7 +24,14 @@ def configure_driver():
 def random_sleep():
     time.sleep(random.uniform(2, 5))
 
-def process_crypto_data(driver, name, url):
+def scrape_cosmos_data():
+    start_date = 1577836800  # 2020-01-01
+    end_date = 1735689600    # 2024-12-31
+    name = "Cosmos (ATOM)"
+    url = f"https://finance.yahoo.com/quote/ATOM-USD/history?period1={start_date}&period2={end_date}&interval=1d"
+    
+    driver = configure_driver()
+    
     try:
         print(f"[{name}] Starting data processing...")
         driver.get(url)
@@ -58,40 +65,12 @@ def process_crypto_data(driver, name, url):
             filename = f"data/raw/{name.replace(' ', '_')}_yahoo_data.csv"
             df.to_csv(filename, index=False, encoding='utf-8')
             print(f"[{name}] Data saved to {filename}")
-            return True
         except Exception as e:
             print(f"[{name}] Error extracting data: {str(e)}")
-            return False
     except Exception as e:
         print(f"[{name}] General error: {str(e)}")
-        return False
-
-def main():
-    """
-    Programme principal pour extraire les données des cryptos spécifiées.
-    """
-    start_date = 1577836800  # 2020-01-01
-    end_date = 1735689600    # 2024-12-31
-
-    # URLs pour les cryptos listées
-    yahoo_urls = {
-        "Bitcoin (BTC)": f"https://finance.yahoo.com/quote/BTC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Ethereum (ETH)": f"https://finance.yahoo.com/quote/ETH-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Cardano (ADA)": f"https://finance.yahoo.com/quote/ADA-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Dogecoin (DOGE)": f"https://finance.yahoo.com/quote/DOGE-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Litecoin (LTC)": f"https://finance.yahoo.com/quote/LTC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Avalanche (AVAX)": f"https://finance.yahoo.com/quote/AVAX-USD/history?period1={start_date}&period2={end_date}&interval=1d",  # Remplacement de Arbitrum par Avalanche
-        "Chainlink (LINK)": f"https://finance.yahoo.com/quote/LINK-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Polygon (MATIC)": f"https://finance.yahoo.com/quote/MATIC-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "XRP (XRP)": f"https://finance.yahoo.com/quote/XRP-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-        "Filecoin (FIL)": f"https://finance.yahoo.com/quote/FIL-USD/history?period1={start_date}&period2={end_date}&interval=1d",
-    }
-
-    driver = configure_driver()
-    for name, url in yahoo_urls.items():
-        process_crypto_data(driver, name, url)
-        random_sleep()
-    driver.quit()
+    finally:
+        driver.quit()
 
 if __name__ == "__main__":
-    main()
+    scrape_cosmos_data()
