@@ -1,111 +1,113 @@
+```markdown
+# PSO RF - Predicting Cryptocurrency Returns and Optimizing Portfolios
 
-# **Crypto Forecasting with PSO-CNN**
-### **Predicting Cryptocurrency Returns and Optimizing Portfolios**
+## 📖 Project Overview
+This project is part of the **Quantitative Finance course** within the Master MOSEF (Modélisation et Méthodes Mathématiques en Économie et Finance) at **Paris 1 Panthéon-Sorbonne University**. The goal is to **forecast cryptocurrency returns** and **optimize portfolio allocations** using advanced machine learning methods.
 
-## **📖 Project Overview**
-This project is part of the **Quantitative Finance** course within the **Master MOSEF (Modélisation et Méthodes Mathématiques en Économie et Finance)** at **Paris 1 Panthéon-Sorbonne University**. The aim is to develop a scientific approach to forecasting cryptocurrency returns using advanced deep learning methods, coupled with portfolio optimization techniques.
-
-### **Key Objectives**:
+### Key Objectives:
 1. **Accurate Return Forecasting**:
-   - Use a **PSO-CNN model** (Particle Swarm Optimization + Convolutional Neural Networks) to predict future cryptocurrency returns.
-   - Analyze time-series data from the cryptocurrency market and on-chain metrics.
-2. **Portfolio Optimization**:
-   - Apply **Mean-Variance Forecasting (MVF)** to allocate assets dynamically based on predicted returns.
-   - Compare portfolio performance against traditional optimization strategies.
+   - Use a **Random Forest model** optimized with **PSO (Particle Swarm Optimization)** to predict cryptocurrency returns.
+   - Leverage historical market data and technical indicators to inform predictions.
 
-This project blends **machine learning**, **financial modeling**, and **cryptocurrency analytics**, providing a robust framework for scientific research in quantitative finance.
+2. **Portfolio Optimization**:
+   - Apply **Mean-Variance Forecasting (MVF)** to dynamically allocate assets based on predicted returns.
+   - Compare portfolio performance against benchmark strategies using metrics such as the Sharpe ratio.
+
+This project combines **machine learning**, **portfolio theory**, and **cryptocurrency analytics** to provide a comprehensive framework for research in quantitative finance.
 
 ---
 
-## **👩‍💻 Authors**
+## 👩‍💻 Authors
 - **Hella Bouhadda**
 - **Charlotte Cegarra**
 - **Chirine Doxposito**
 
 ---
 
-## **📂 Project Structure**
+## 📂 Project Structure
+
 ```
 📦 crypto-forecasting-PSO-CNN
-├── 📂 data/                  # Données collectées et nettoyées
-│   ├── raw/                  # Données brutes récupérées
-│   │   ├── Arbitrum-ARB_yahoo_data.csv
-│   │   ├── Bitcoin-BTC_yahoo_data.csv
-│   │   ├── Cardano-ADA_yahoo_data.csv
-│   │   ├── Chainlink-LINK_yahoo_data.csv
-│   │   ├── Dogecoin-DOGE_yahoo_data.csv
-│   │   ├── Ethereum-ETH_yahoo_data.csv
-│   │   ├── Filecoin-FIL_yahoo_data.csv
-│   │   ├── Litecoin-LTC_yahoo_data.csv
-│   │   ├── Polygon-MATIC_yahoo_data.csv
-│   │   ├── XRP-XRP_yahoo_data.csv
-│   ├── processed/            # Données nettoyées et fusionnées
-│   │   ├── merged_data.csv   # Fichier fusionné contenant toutes les données
-│   ├── features/             # Données enrichies avec indicateurs techniques
-│       ├── .keep
-├── 📂 notebooks/              # Notebooks Jupyter pour l'exploration
-│   ├── 01_data_collection.ipynb
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_model_training.ipynb
-│   ├── 04_portfolio_optimization.ipynb
-├── 📂 models/                 # Modèles entraînés
-│   ├── PSO_CNN_model.h5       # Modèle entraîné (placeholder)
-│   ├── clustering_model.pkl   # Modèle de clustering (placeholder)
-│   ├── .keep
-├── 📂 src/                    # Code source pour l'implémentation
-│   ├── 📂 api/
-│   │   ├── main.py            # API FastAPI pour servir les prédictions
-│   ├── 📂 data_processing/
-│   │   ├── clean_data.py      # Script de nettoyage et fusion des données
-│   │   ├── collect_data.py    # Scripts de collecte de données
-│   │   ├── feature_engineering.py # Ajout d’indicateurs techniques
-│   ├── 📂 models/
-│   │   ├── train_model.py     # Entraînement du modèle PSO-CNN
-│   │   ├── clustering.py      # Algorithme de clustering
-│   │   ├── predict.py         # Script de prédiction
-│   ├── 📂 optimization/
-│   │   ├── optimize_portfolio.py # Stratégies d’allocation
-│   ├── 📂 web_scraping/
-│   │   ├── web.py             # Script pour le scraping des données
-├── 📂 results/                # Résultats et visualisations
-│   ├── backtesting_results.png
-│   ├── model_performance.csv
-│   ├── .keep
-├── 📂 docs/                   # Documentation du projet
-│   ├── methodology.md         # Explication de la méthodologie
-│   ├── results.md             # Résumé des résultats
-│   ├── references.md          # Revue de littérature
-├── README.md                  # Présentation du projet
-├── requirements.txt           # Liste des dépendances Python
-├── .gitignore                 # Fichiers à exclure du suivi Git
-
+│
+├── 📂 crypto_api/                  # Core of the API
+│   ├── 📂 data/                    # Data storage
+│   │   ├── 📂 processed/           # Processed and cleaned data
+│   │   │   ├── `features_data.csv` 
+│   │   │   ├── `merged_data.csv`
+│   │   ├── 📂 raw/                 # Raw scraped data
+│   │       ├── `Bitcoin_(BTC)_yahoo_data.csv`
+│   │       ├── `Ethereum_(ETH)_yahoo_data.csv`
+│   │       ├── `...` (Other cryptocurrencies)
+│   ├── 📂 data_processing/         # Data processing scripts
+│   │   ├── `features.py`           # Feature engineering
+│   │   ├── `scrape.py`             # Web scraping for raw data
+│   ├── 📂 ml/                      # Machine learning scripts
+│   │   ├── `mvf.py`                # Portfolio optimization using MVF
+│   │   ├── `predict.py`            # Prediction logic for market direction
+│   │   ├── `train.py`              # Model training scripts
+│   ├── 📂 static/                  # Static files for API documentation
+│   │   ├── `logo.jpg`             
+│   ├── 📂 templates/               # HTML templates
+│   │   ├── `home.html`             # API home page
+│   ├── `API_README.md`             # API documentation
+│   ├── `config.py`                 # Configuration file for paths and settings
+│   ├── `direction_model.pkl`       # Pre-trained market direction model
+│   ├── `main.py`                   # FastAPI entry point
+│   ├── `models.py`                 # Data schemas and validation
+│   ├── `requirements.txt`          # Python dependencies
+│   ├── `return_model.pkl`          # Pre-trained return forecasting model
+│   ├── `utils.py`                  # Shared utility functions
+│
+├── 📂 data/                        # Redundant data directory (to be removed)
+│   ├── 📂 processed/               # Processed and cleaned data
+│   ├── 📂 raw/                     # Raw scraped data
+│
+├── 📂 docs/                        # Project documentation
+│   ├── `Article_Scientifique.pdf`  # Scientific article on methodology
+│   ├── `results.md`                # Summary of experimental results
+│
+├── 📂 notebooks/                   # Jupyter notebooks
+│   ├── `01_scrapping.ipynb`        # Web scraping and data collection
+│   ├── `02_data_collection.ipynb`  # Data cleaning and merging
+│   ├── `03_feature_engineering.ipynb` # Feature engineering for models
+│   ├── `04_model_training.ipynb`   # Model training and validation
+│   ├── `05_mvf.ipynb`              # Portfolio optimization using MVF
+│   ├── `06_predict_direction.ipynb` # Market direction prediction
+│
+├── `.gitignore`                    # Files ignored by Git
+├── `README.md`                     # Project overview and setup instructions
+├── `requirements.txt`              # Python dependencies
 ```
 
 ---
 
-## **🚀 Features**
-- **Return Forecasting**:
-  - Train a CNN model optimized with PSO to predict cryptocurrency returns.
-  - Analyze market time-series data and blockchain (on-chain) metrics.
-- **Portfolio Optimization**:
-  - Use Mean-Variance Forecasting (MVF) to compute optimal portfolio allocations.
-  - Evaluate portfolio performance using scientific metrics like Sharpe ratio and maximum drawdown.
+## 🚀 Features
+
+### **1. Return Forecasting**:
+- Train a **Random Forest model** optimized with **PSO** to predict cryptocurrency returns.
+- Analyze historical market time-series data and technical indicators.
+
+### **2. Portfolio Optimization**:
+- Use **Mean-Variance Forecasting (MVF)** to compute optimal portfolio allocations.
+- Evaluate portfolio performance using metrics like Sharpe ratio, volatility, and drawdown.
 
 ---
 
-## **🔧 Technologies**
+## 🔧 Technologies
+
 - **Programming Language**: Python
 - **Frameworks and Libraries**:
-  - TensorFlow/Keras: PSO-CNN modeling
-  - Scikit-learn: Clustering and feature engineering
-  - FastAPI: Deploying the forecasting model as an API
+  - Scikit-learn: Model training and feature engineering
+  - FastAPI: Serving predictions via RESTful APIs
+  - Pandas, Numpy: Data preprocessing and analysis
 - **Data Sources**:
-  - APIs: Binance, Etherscan, Glassnode
-  - Web scraping for macroeconomic events and news
+  - Yahoo Finance: Historical market data
+  - Other APIs: For on-chain and macroeconomic metrics
 
 ---
 
-## **📚 Installation**
+## 📚 Installation
+
 ### **1️⃣ Prerequisites**
 - Python 3.9 or later
 - Pip for dependency management
@@ -117,57 +119,46 @@ cd crypto-forecasting-PSO-CNN
 ```
 
 ### **3️⃣ Install Dependencies**
-Install all required Python libraries:
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## **🛠️ Usage**
-### **1️⃣ Collect Data**
-Run the script to collect market and on-chain data:
+## 🛠️ Usage
+
+### **1️⃣ Scrape Data**
+Scrape cryptocurrency market data:
 ```bash
-python src/data_processing/collect_data.py
+python crypto_api/data_processing/scrape.py
 ```
 
-### **2️⃣ Prepare Data**
-Run the script to preprocess data and extract features:
+### **2️⃣ Merge and Process Data**
+Merge raw data and create features:
 ```bash
-python src/data_processing/feature_engineering.py
+python crypto_api/main.py
 ```
+(Endpoint `/merge_and_features` in FastAPI)
 
 ### **3️⃣ Train the Model**
-Train the PSO-CNN model with the following command:
+Train the Random Forest model:
 ```bash
-python src/models/train_model.py
+python crypto_api/ml/train.py
 ```
 
-### **4️⃣ Optimize the Portfolio**
-Run the script to compute the optimal portfolio allocation:
+### **4️⃣ Predict Market Direction**
+Serve predictions via FastAPI:
 ```bash
-python src/optimization/optimize_portfolio.py
+uvicorn crypto_api.main:app --reload
 ```
 
----
 
-## **📝 Contribution Guidelines**
-If you want to contribute to this project:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature-name`).
-3. Submit a pull request with a clear description of your changes.
 
----
+## 📢 Contact
 
-## **📄 License**
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
-
----
-
-## **📢 Contact**
 For any questions or suggestions, feel free to reach out to the authors:
+
 - **Hella Bouhadda**
 - **Charlotte Cegarra**
 - **Chirine Doxposito**
-
-
+```
