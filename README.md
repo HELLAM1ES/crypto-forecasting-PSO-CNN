@@ -1,4 +1,4 @@
-```markdown
+
 # PSO RF - Predicting Cryptocurrency Returns and Optimizing Portfolios
 
 ## 📖 Project Overview
@@ -26,7 +26,7 @@ This project combines **machine learning**, **portfolio theory**, and **cryptocu
 
 ## 📂 Project Structure
 
-```
+
 📦 crypto-forecasting-PSO-CNN
 │
 ├── 📂 crypto_api/                  # Core of the API
@@ -77,7 +77,7 @@ This project combines **machine learning**, **portfolio theory**, and **cryptocu
 ├── `.gitignore`                    # Files ignored by Git
 ├── `README.md`                     # Project overview and setup instructions
 ├── `requirements.txt`              # Python dependencies
-```
+
 
 ---
 
