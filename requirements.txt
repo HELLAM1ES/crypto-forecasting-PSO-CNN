@@ -1,3 +1,11 @@
+fastapi
+uvicorn
+pandas
+numpy
+scikit-learn
+python-multipart
+pydantic
 selenium
 webdriver-manager
-pandas
+psutil
+
