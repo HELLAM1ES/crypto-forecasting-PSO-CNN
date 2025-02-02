@@ -1,6 +1,3 @@
-Voici une version mise à jour du **README.md**, en anglais, avec la correction du nom de Chirine et une description plus précise du projet scientifique dans le cadre de votre cours de finance quantitative :
-
----
 
 # **Crypto Forecasting with PSO-CNN**
 ### **Predicting Cryptocurrency Returns and Optimizing Portfolios**
