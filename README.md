@@ -26,7 +26,6 @@ This project combines **machine learning**, **portfolio theory**, and **cryptocu
 
 ## 📂 Project Structure
 
-
 📦 crypto-forecasting-PSO-CNN
 │
 ├── 📂 crypto_api/                  # Core of the API
@@ -62,9 +61,8 @@ This project combines **machine learning**, **portfolio theory**, and **cryptocu
 │   ├── 📂 processed/               # Processed and cleaned data
 │   ├── 📂 raw/                     # Raw scraped data
 │
-├── 📂 docs/                        # Project documentation
-│   ├── `Article_Scientifique.pdf`  # Scientific article on methodology
-│   ├── `results.md`                # Summary of experimental results
+├── 📂 Article_Scientifique/        # Scientific article on methodology                 
+│   ├── `Finance_Quantitative.pdf`  
 │
 ├── 📂 notebooks/                   # Jupyter notebooks
 │   ├── `01_scrapping.ipynb`        # Web scraping and data collection
@@ -77,6 +75,7 @@ This project combines **machine learning**, **portfolio theory**, and **cryptocu
 ├── `.gitignore`                    # Files ignored by Git
 ├── `README.md`                     # Project overview and setup instructions
 ├── `requirements.txt`              # Python dependencies
+
 
 
 ---
