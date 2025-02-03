@@ -61,8 +61,9 @@ This project combines **machine learning**, **portfolio theory**, and **cryptocu
 │   ├── 📂 processed/               # Processed and cleaned data
 │   ├── 📂 raw/                     # Raw scraped data
 │
-├── 📂 Article_Scientifique/        # Scientific article on methodology                 
-│   ├── `Finance_Quantitative.pdf`  
+├── 📂 docs/                        # Project documentation
+│   ├── `Article_Scientifique.pdf`  # Scientific article on methodology
+│   ├── `results.md`                # Summary of experimental results
 │
 ├── 📂 notebooks/                   # Jupyter notebooks
 │   ├── `01_scrapping.ipynb`        # Web scraping and data collection
